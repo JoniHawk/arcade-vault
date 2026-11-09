@@ -13,6 +13,10 @@ Arcade Vault: online games platform where players compete for highest score. REA
 - `npm run lint` — ESLint (flat config, `eslint.config.mjs`)
 - No test runner configured.
 
+
+## Skills
+Usa siempre /frontend-desing para diseñar la interfaz de usuario
+
 ## Stack / Architecture notes
 
 - Next.js 16.4.5, React 19.3, TypeScript strict, Tailwind v4 (wired via `@tailwindcss/turbopack` loader rule in `next.config.ts`, not PostCSS).
