@@ -10,7 +10,9 @@ export default function Nav() {
   const { user, signOut } = useSession();
   const [open, setOpen] = useState(false);
 
-  const isLibrary = pathname === "/" || pathname.startsWith("/juegos");
+  const isHome = pathname === "/";
+  const isLibrary =
+    pathname.startsWith("/games") || pathname.startsWith("/juegos");
   const isHall = pathname.startsWith("/salon");
   const isAuth = pathname.startsWith("/auth");
   const active = (on: boolean) => (on ? "active" : "");
@@ -26,7 +28,10 @@ export default function Nav() {
           </div>
         </Link>
         <div className="links">
-          <Link href="/" className={active(isLibrary)}>
+          <Link href="/" className={active(isHome)}>
+            Inicio
+          </Link>
+          <Link href="/games" className={active(isLibrary)}>
             Biblioteca
           </Link>
           <Link href="/salon" className={active(isHall)}>
@@ -62,7 +67,10 @@ export default function Nav() {
       ></div>
       <aside className={"av-mobile-panel" + (open ? " open" : "")}>
         <div className="pixel neon-cyan mb-4 text-[11px]">MENÚ</div>
-        <Link href="/" className={active(isLibrary)} onClick={close}>
+        <Link href="/" className={active(isHome)} onClick={close}>
+          Inicio
+        </Link>
+        <Link href="/games" className={active(isLibrary)} onClick={close}>
           Biblioteca
         </Link>
         <Link href="/salon" className={active(isHall)} onClick={close}>
